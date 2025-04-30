@@ -1,75 +1,106 @@
-# GenAI - AI Code Reviewer
+# 🧠 AI Code Reviewer
 
-## Overview
+A web-based AI-powered tool that reviews Python code, detects bugs, suggests improvements, and generates human-friendly documentation using language models.
 
-GenAI - AI Code Reviewer is a Python-based web application that allows users to submit their Python code for review. The application utilizes Google's Gemini API to analyze the submitted code, identify potential bugs, errors, and areas of improvement, and provide corrected code snippets as suggestions.
+---
 
-## Features
+## 📌 Overview
 
-- **Code Review**: Submit Python code to get AI-generated feedback.
+This project demonstrates the evolution of a code reviewer app through two versions:
+
+- **Version 1**: Built with guidance from ChatGPT and tutorials. It uses Google's Gemini API and Streamlit for quick prototyping.
+- **Version 2**: Fully self-written using Flask and a local Ollama LLM (`llama3.2`) for offline, more customizable AI processing.
+
+---
+
+## 🧾 Table of Contents
+
+- [Project Structure](#file-structure)
+- [Version Highlights](#version-highlights)
+- [Tech Stack](#tech-stack)
+- [Setup & Installation](#setup--installation)
+- [How to Run](#how-to-run)
+- [Learnings & Evolution](#learnings--evolution)
+- [Screenshots](#screenshots) *(optional)*
+- [License](#license)
+
+---
+
+## 📁 File Structure
+
+```bash
+.
+├── version_1/                   # Streamlit + Gemini API version
+│   ├── app.py
+│   └── .env (Google API key)
+│
+├── version_2/                   # Flask + Ollama + Llama3.2 version
+│   ├── app.py
+│   ├── templates/
+│   │   └── index.html
+│   └── utils/
+│       └── functions.py
+│
+├── README.md
+└── requirements.txt             # Optional, depending on environment
+
+## ✨ Version Highlights
+
+### 🔹 Version 1 (Assisted Build)
+
+- Built using **Streamlit** for fast UI.
     
-- **Bug Detection**: Identify syntax errors, logical errors, and other potential issues.
+- Uses **Google Gemini API** via `google.generativeai`.
     
-- **Fix Suggestions**: Receive corrected versions of the code.
-    
-- **User-Friendly Interface**: Built using Streamlit for an intuitive and interactive experience.
+- Offers simple input/output layout for quick feedback.
     
 
-## Tech Stack
+### 🔸 Version 2 (Self-Built)
 
-- **Python**
+- Built using **Flask** from scratch.
     
-- **Streamlit** (Frontend for UI)
+- Implements **Ollama** with a **locally running `llama3.2` model**.
     
-- **Google Gemini API** (AI-powered code analysis)
+- Enhanced prompt engineering for better review quality.
     
-- **Dotenv** (For API key management)
+- Beautiful **custom HTML/CSS UI** for better user experience.
     
+- Contains robust instructions for context filtering (code-only reviews).
 
-## Installation
+|Area|Tools Used|
+|---|---|
+|Frontend|Streamlit (v1), HTML/CSS (v2)|
+|Backend|Python, Flask|
+|LLM|Google Gemini API (v1), Ollama LLM (`llama3.2`) (v2)|
+|Environment|dotenv (`.env`), virtualenv|
 
-### Prerequisites
+## ⚙️ Setup & Installation
 
-Ensure you have Python installed on your system.
+### 🧪 Version 1
+cd version_1
+python -m venv venv
+source venv/bin/activate       # Windows: venv\Scripts\activate
+pip install -r requirements.txt
 
-### Steps to Install
+# Set your Google API Key in .env
+echo GOOGLE_API_KEY=your_key_here > .env
 
-1. Clone the repository:
-    
-    ```
-    git clone https://github.com/your-username/genai-code-reviewer.git
-    cd genai-code-reviewer
-    ```
-    
-2. Create and activate a virtual environment:
-    
-    ```
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-    
-3. Install the required dependencies:
-    
-    ```
-    pip install -r requirements.txt
-    ```
-    
-4. Set up your API key:
-    
-    - Create a `.env` file in the root directory.
-        
-    - Add the following line to the `.env` file:
-        
-        ```
-        GOOGLE_API_KEY=your_google_api_key_here
-        ```
-        
-
-## Usage
-
-Run the Streamlit app:
-
-```
 streamlit run app.py
-```
 
+### 🛠️ Version 2
+cd version_2
+python -m venv venv
+source venv/bin/activate
+pip install flask ollama
+
+# Make sure Ollama is installed and running
+ollama run llama3.2
+
+python app.py
+
+🧠 Learnings & Evolution
+Version 1 taught me the basics of API calls, prompt structuring, and how to quickly prototype with Streamlit.
+
+Version 2 was my full-stack build using Flask, local LLMs, and custom UI — improving my understanding of backend routing, HTML templating, and deploying AI models locally.
+
+Implemented stricter prompt rules and better error handling in v2.
