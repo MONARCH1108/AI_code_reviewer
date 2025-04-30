@@ -43,6 +43,7 @@ This project demonstrates the evolution of a code reviewer app through two versi
 │
 ├── README.md
 └── requirements.txt             # Optional, depending on environment
+```
 
 ## ✨ Version Highlights
 
