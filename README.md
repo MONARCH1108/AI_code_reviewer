@@ -111,9 +111,6 @@ python app.py
 
 ### Version 2 
  - was my full-stack build using Flask, local LLMs, and custom UI — improving my understanding of backend routing, HTML templating, and deploying AI models locally.
-
-<<<<<<< HEAD
+ 
 - Implemented stricter prompt rules and better error handling in v2.
-=======
-Implemented stricter prompt rules and better error handling in v2.
->>>>>>> 1ae733177792846a0d0b7beb86e774f942fd634c
+
