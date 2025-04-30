@@ -43,6 +43,7 @@ This project demonstrates the evolution of a code reviewer app through two versi
 │
 ├── README.md
 └── requirements.txt             # Optional, depending on environment
+```
 
 ## ✨ Version Highlights
 
@@ -77,17 +78,22 @@ This project demonstrates the evolution of a code reviewer app through two versi
 ## ⚙️ Setup & Installation
 
 ### 🧪 Version 1
+```bash
 cd version_1
 python -m venv venv
 source venv/bin/activate       # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+pip install streamlit google.generativeai 
+```
 
 # Set your Google API Key in .env
+```bash
 echo GOOGLE_API_KEY=your_key_here > .env
 
 streamlit run app.py
+```
 
 ### 🛠️ Version 2
+```bash
 cd version_2
 python -m venv venv
 source venv/bin/activate
@@ -97,10 +103,13 @@ pip install flask ollama
 ollama run llama3.2
 
 python app.py
+```
 
-🧠 Learnings & Evolution
-Version 1 taught me the basics of API calls, prompt structuring, and how to quickly prototype with Streamlit.
+## 🧠 Learnings & Evolution
+### Version 1 
+ - taught me the basics of API calls, prompt structuring, and how to quickly prototype with Streamlit.
 
-Version 2 was my full-stack build using Flask, local LLMs, and custom UI — improving my understanding of backend routing, HTML templating, and deploying AI models locally.
+### Version 2 
+ - was my full-stack build using Flask, local LLMs, and custom UI — improving my understanding of backend routing, HTML templating, and deploying AI models locally.
 
-Implemented stricter prompt rules and better error handling in v2.
+- Implemented stricter prompt rules and better error handling in v2.
