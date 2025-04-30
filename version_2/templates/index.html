@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Reviewer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+        }
+        .input_area {
+            background-color: white;
+            border: 2px solid #3498db;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .output_area {
+            background-color: white;
+            border: 2px solid #2ecc71;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 150px;
+            text-align: left;
+        }
+        textarea {
+            width: 80%;
+            height: 300px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.5;
+            white-space: pre;
+            overflow-y: auto;
+            resize: vertical;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        .output_area h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .output_content {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #2ecc71;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Code Reviewer</h1>
+        <form method="post" class="input_area">
+            <textarea name="code" placeholder="Enter your code here..." spellcheck="false">{{code if code else ''}}</textarea>
+            <br>
+            <input type="submit" value="Review">
+        </form>
+        <div class="output_area">
+            <h3>Review Results</h3>
+            <div class="output_content">
+                <pre>{{response}}</pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
